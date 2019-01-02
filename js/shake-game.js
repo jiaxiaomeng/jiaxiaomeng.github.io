@@ -5,7 +5,7 @@ var classDom = function(cla){
 var tempTime1;
 var supportsVibrate = "vibrate" in navigator;
 //requset
-var requset = function (){
+var request = function (){
 	if (navigator.vibrate) {
 		navigator.vibrate([2000, 800]);
 	} else if (navigator.webkitVibrate) {
@@ -47,26 +47,28 @@ var requset = function (){
 
 //deviceMotiion
 var yyy;
-if( window.DeviceMotionEvent ){
-	var speed = 15;  
-	var x = y = z = lastX = lastY = lastZ = 0;  
-	window.addEventListener('devicemotion', function(){  
-		var acceleration =event.accelerationIncludingGravity;  
-		x = acceleration.x;  
-		y = acceleration.y;  
-		z = acceleration.z;
-		if( ( Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed || Math.abs(z-lastZ) > speed ) && !yyy ) {  
-			yyy = 1;
-			alert(1)
-			requset()	
-		}  
-		lastX = x;  
-		lastY = y;  
-		lastZ = z;
-	}, false);  
-}else{
-	alert('您的手机检测不到重力感应')
+if(!yyy){
+	if(window.DeviceMotionEvent){
+		var speed = 15;  
+		var x = y = z = lastX = lastY = lastZ = 0;  
+		window.addEventListener('devicemotion', function(){  
+			var acceleration =event.accelerationIncludingGravity;  
+			x = acceleration.x;  
+			y = acceleration.y;  
+			z = acceleration.z;
+			if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed || Math.abs(z-lastZ) > speed+10) {  
+				yyy = 1;
+				request()
+			}  
+			lastX = x;  
+			lastY = y;  
+			lastZ = z;
+		}, false);  
+	}else{
+		alert('您的手机检测不到重力感应')
+	}
 }
+
 
 //click
 var shakeGame = classDom('shake-game')[0];
@@ -74,13 +76,13 @@ if(navigator.userAgent.match(/(iPhone)/)[0] == 'iPhone'){
 	shakeGame.addEventListener("touchstart", e => {
 		e.preventDefault();
 		tempTime1 = 1;
-		requset()
+		request()
 	})
 }else{
 	shakeGame.onclick = function () {
 		var audio1 = classDom('audio1')[0];
 		audio1.play();
 		//发送请求
-		requset()
+		request()
 	}	
 }
