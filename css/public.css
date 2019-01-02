@@ -91,6 +91,7 @@ ul,li{
     margin-left: -275px;
 	font-size: 45px;
     width: 550px;
+	cursor: pointer;
 }
 
 .shake-game{

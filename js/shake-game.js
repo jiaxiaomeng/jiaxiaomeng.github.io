@@ -3,9 +3,9 @@ var classDom = function(cla){
 }
 
 var tempTime1;
+var supportsVibrate = "vibrate" in navigator;
 //requset
 var requset = function (){
-	var supportsVibrate = "vibrate" in navigator;
 	navigator.vibrate([2000, 800]);
 	var audio1 = classDom('audio1')[0];
 	audio1.play();
@@ -50,18 +50,20 @@ shakeGame.onclick = function () {
 	//发送请求
 	requset()
 }
-var a = shakeGame.onclick
+
 
 //deviceMotiion
 if (window.DeviceMotionEvent) {
-	var speed = 25;
+	var speed = 15;
 	var x = y = z = lastX = lastY = lastZ = 0;
 	window.addEventListener('devicemotion', function() {
 		var acceleration = event.accelerationIncludingGravity;
 		x = acceleration.x;
 		y = acceleration.y;
 		if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
-			a()
+			alert(1)
+			navigator.vibrate([2000, 800]);
+			requset()
 		}
 		lastX = x;
 		lastY = y;
