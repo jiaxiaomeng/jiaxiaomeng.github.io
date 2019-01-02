@@ -51,6 +51,9 @@ shakeGame.onclick = function () {
 	requset()
 }
 
+if( navigator.userAgent.match(iphone) ) {
+	shakeGame.addEventListener('touchstart', requset, false);
+}
 
 //deviceMotiion
 if (window.DeviceMotionEvent) {
