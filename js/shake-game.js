@@ -43,7 +43,10 @@ var requset = function (){
 }
 
 //deviceMotiion
-if(window.DeviceMotionEvent){
+var yyy;
+console.log(!yyy)
+if(window.DeviceMotionEvent && !yyy ){
+	console.log(yyy)
 	var speed = 15;  
 	var x = y = z = lastX = lastY = lastZ = 0;  
 	window.addEventListener('devicemotion', function(){  
@@ -52,6 +55,7 @@ if(window.DeviceMotionEvent){
 		y = acceleration.y;  
 		z = acceleration.z;
 		if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed || Math.abs(z-lastZ) > speed) {  
+			yyy = 1;
 			navigator.vibrate([2000, 800]);
 			requset()	
 		}  
