@@ -38,7 +38,7 @@ var requset = function (){
 		var hasWon = result.hasWon;
 		hasWon ? window.location.href='prize.html' : false;
 		sessionStorage.setItem('restTime', restTime);
-		// window.location.href='remain.html'
+		window.location.href='remain.html'
 	}
 }
 
