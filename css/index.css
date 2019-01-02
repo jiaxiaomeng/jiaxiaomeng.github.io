@@ -1,27 +1,74 @@
-*{
-	padding: 0;
-	margin: 0;
+.item{
+    overflow: hidden;
 }
 
-body,html {
-	height: 100%;
-	background: black;
+.item>div{
+    overflow: hidden;
+    float: left;
 }
 
-#wrap{
-	width: 100%;
-	overflow: hidden;
+.item>div:nth-of-type(1){
+    margin: 8px;
+    width: 150px;
+    color:white;
 }
 
-#container{
-	width: 100%;
-	height: 1000%;
-	background: black;
-	text-align: center;
-	font-size: 0;
-	transition: 0.3s linear;
+.item input{
+    margin-top: 8px;
+	font-size: 45px;
+    width: 380px;
 }
 
-img{
-	margin: 0 auto;
+.btn{
+    margin-left:20px;
+    margin-top: 10px;
+    width: 530px;
+    height: 90px;
+    border-width: 0px;
+    border-radius: 3px;
+    background: #bb0606;
+	font-size: 45px;
+    cursor: pointer;
+    outline: none;
+    font-family: Microsoft YaHei;
+    color: white;
 }
+
+.btn:hover {
+    background: #5599FF;
+}
+
+.animation{
+    animation:mymove 2s ease;
+}
+
+@keyframes mymove {
+    0%   {background: red}
+    25%  {background: yellow}
+    50%  {background: blue}
+    75%  {background: green}
+    100% {background: red}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

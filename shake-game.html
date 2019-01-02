@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>震海 - 摇一摇活动 - 摇一摇页面</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/shake-game.css"/>
+		<script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="home">
+			<audio src="mp3/all.mp3" class="audio" hidden="true"></audio>
+			<audio src="mp3/prize.mp3" class="audio1" hidden="true"></audio>
+			<div class="bg" >
+				<img class="bgImg" src="img/bg1.png">
+			</div>
+			<div class="content">
+				<div class="list-wrap">
+					<div class="list-wrap2">
+						<ul class="list-ul">
+							<!-- <li *ngFor="let item of state; let i = index">尾号 {{item.prizeMobile ? item.prizeMobile.substring(7,11) : ''}} 中奖了 {{item.prizeName ? item.prizeName : ''}}</li> -->
+						</ul>
+					</div>
+				</div>
+				<div class="info-wrap shake-game">
+					<img src="img/shake.png">
+					<span>摇一摇或点击进行抽奖</span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" charset="utf-8" src="js/public.js" ></script>
+		<script type="text/javascript" charset="utf-8" src="js/shake-game.js" ></script>
+	</body>
+</html>
