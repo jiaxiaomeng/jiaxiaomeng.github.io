@@ -51,7 +51,7 @@ shakeGame.onclick = function () {
 	requset()
 }
 
-if( navigator.userAgent.match(iphone) ) {
+if( navigator.userAgent.match(/(iPhone)/)[0] == "iPhone" ) {
 	shakeGame.addEventListener('touchstart', requset, false);
 }
 
