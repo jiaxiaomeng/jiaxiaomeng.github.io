@@ -42,7 +42,26 @@ var requset = function (){
 	}
 }
 
-
+//deviceMotiion
+if(window.DeviceMotionEvent){
+	var speed = 15;  
+	var x = y = z = lastX = lastY = lastZ = 0;  
+	window.addEventListener('devicemotion', function(){  
+		var acceleration =event.accelerationIncludingGravity;  
+		x = acceleration.x;  
+		y = acceleration.y;  
+		z = acceleration.z;
+		if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed || Math.abs(z-lastZ) > speed) {  
+			navigator.vibrate([2000, 800]);
+			requset()	
+		}  
+		lastX = x;  
+		lastY = y;  
+		lastZ = z;
+	}, false);  
+}else{
+	alert('您的手机检测不到重力感应')
+}
 
 //click
 var shakeGame = classDom('shake-game')[0];
@@ -51,26 +70,7 @@ shakeGame.onclick = function () {
 	requset()
 }
 
-if( navigator.userAgent.match(/(iPhone)/)[0] == "iPhone" ) {
-	shakeGame.addEventListener('touchstart', requset, false);
-}
-
-
-//deviceMotiion
-if (window.DeviceMotionEvent) {
-	var speed = 15;
-	var x = y = z = lastX = lastY = lastZ = 0;
-	window.addEventListener('devicemotion', function() {
-		var acceleration = event.accelerationIncludingGravity;
-		x = acceleration.x;
-		y = acceleration.y;
-		if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
-			navigator.vibrate([2000, 800]);
-			requset()
-		}
-		lastX = x;
-		lastY = y;
-	}, false);
-}else{
-	alert('您的手机检测不到重力感应')
-}
+shakeGame.addEventListener("touchstart", e => {
+	e.preventDefault()
+	requset()
+})
