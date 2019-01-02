@@ -12,8 +12,6 @@ var requset = function (){
 		navigator.webkitVibrate([2000, 800]);
 	}
 	
-// 	var audio1 = classDom('audio1')[0];
-// 	audio1.play();
 	if (tempTime1 == null){
             tempTime1 = new Date().getTime();
 	}else{
@@ -59,7 +57,6 @@ if( window.DeviceMotionEvent ){
 		z = acceleration.z;
 		if( ( Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed || Math.abs(z-lastZ) > speed ) && !yyy ) {  
 			yyy = 1;
-			navigator.vibrate([2000, 800]);
 			requset()	
 		}  
 		lastX = x;  
@@ -80,6 +77,8 @@ if(navigator.userAgent.match(/(iPhone)/)[0] == 'iPhone'){
 	})
 }else{
 	shakeGame.onclick = function () {
+		var audio1 = classDom('audio1')[0];
+		audio1.play();
 		//发送请求
 		requset()
 	}	
