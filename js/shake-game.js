@@ -38,7 +38,7 @@ var requset = function (){
 		var hasWon = result.hasWon;
 		hasWon ? window.location.href='prize.html' : false;
 		sessionStorage.setItem('restTime', restTime);
-		restTime ? window.location.href='remain.html' : alert('您的摇一摇次数已用完');
+		window.location.href='remain.html'
 	}
 }
 
@@ -58,6 +58,8 @@ if (window.DeviceMotionEvent) {
 		x = acceleration.x;
 		y = acceleration.y;
 		if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
+			var supportsVibrate = "vibrate" in navigator;
+			navigator.vibrate([2000, 800]);
 			requset();
 		}
 		lastX = x;

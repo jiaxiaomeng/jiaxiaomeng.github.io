@@ -6,7 +6,8 @@ var classDom = function(cla){
 	};
 var result = classDom('result')[0];
 var resultBtn = classDom('resultBtn')[0];
-if(!resultA){
+if(resultA == 0){
+	alert('您的摇一摇次数已用完');
 	var resultP = classDom('resultP')[0];
 	arr = [resultBtn, resultP, result];
 	for(var i=0; i<arr.length; i++){

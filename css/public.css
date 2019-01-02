@@ -98,6 +98,7 @@ ul,li{
 	margin-left: -150px;
 	width: 300px;
 	text-align: center;
+	cursor: pointer;
 }
 
 .shake-game img{
@@ -135,4 +136,8 @@ ul,li{
 .remain-btnWrap p{
 	font-size: 36px;
 	color: white
+}
+
+.resultBtn, .returnHome{
+	cursor: pointer;
 }
