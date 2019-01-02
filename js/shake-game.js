@@ -12,8 +12,8 @@ var requset = function (){
 		navigator.webkitVibrate([2000, 800]);
 	}
 	
-	var audio1 = classDom('audio1')[0];
-	audio1.play();
+// 	var audio1 = classDom('audio1')[0];
+// 	audio1.play();
 	if (tempTime1 == null){
             tempTime1 = new Date().getTime();
 	}else{
@@ -74,7 +74,8 @@ if( window.DeviceMotionEvent ){
 var shakeGame = classDom('shake-game')[0];
 if(navigator.userAgent.match(/(iPhone)/)[0] == 'iPhone'){
 	shakeGame.addEventListener("touchstart", e => {
-		e.preventDefault()
+		e.preventDefault();
+		tempTime1 = 1;
 		requset()
 	})
 }else{
