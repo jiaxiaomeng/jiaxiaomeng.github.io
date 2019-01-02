@@ -38,9 +38,11 @@ var requset = function (){
 		var hasWon = result.hasWon;
 		hasWon ? window.location.href='prize.html' : false;
 		sessionStorage.setItem('restTime', restTime);
-		window.location.href='remain.html'
+		// window.location.href='remain.html'
 	}
 }
+
+
 
 //click
 var shakeGame = classDom('shake-game')[0];
@@ -48,6 +50,7 @@ shakeGame.onclick = function () {
 	//发送请求
 	requset()
 }
+var a = shakeGame.onclick
 
 //deviceMotiion
 if (window.DeviceMotionEvent) {
@@ -58,9 +61,7 @@ if (window.DeviceMotionEvent) {
 		x = acceleration.x;
 		y = acceleration.y;
 		if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
-			var supportsVibrate = "vibrate" in navigator;
-			navigator.vibrate([2000, 800]);
-			requset();
+			a()
 		}
 		lastX = x;
 		lastY = y;

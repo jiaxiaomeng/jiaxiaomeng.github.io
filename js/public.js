@@ -7,7 +7,7 @@ window.onload = function(){
 	audio ? audio.play() : false;
 	var bgWidth =  window.innerWidth;
 	var bgHeight = window.innerHeight;
-	bgHeight < 670 ? bgHeight = 670 : false;
+	bgHeight < 1745 ? bgHeight = 1745 : false;
 	var home = classDom('home')[0];
 	var bg = classDom('bg')[0];
 	var bgImg = classDom('bgImg')[0];

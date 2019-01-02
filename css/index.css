@@ -13,6 +13,10 @@
     color:white;
 }
 
+.item>div:nth-of-type(2){
+    width: 370px;
+}
+
 .item input{
     margin-top: 8px;
 	font-size: 45px;
