@@ -57,6 +57,7 @@ if( window.DeviceMotionEvent ){
 		z = acceleration.z;
 		if( ( Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed || Math.abs(z-lastZ) > speed ) && !yyy ) {  
 			yyy = 1;
+			alert(1)
 			requset()	
 		}  
 		lastX = x;  
