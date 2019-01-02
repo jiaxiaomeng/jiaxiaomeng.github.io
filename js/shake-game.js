@@ -61,7 +61,6 @@ if (window.DeviceMotionEvent) {
 		x = acceleration.x;
 		y = acceleration.y;
 		if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
-			alert(1)
 			navigator.vibrate([2000, 800]);
 			requset()
 		}
