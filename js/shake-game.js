@@ -69,20 +69,18 @@ if(!yyy){
 	}
 }
 
-
 //click
+var shakeGame = classDom('shake-game')[0];
+shakeGame.onclick = function () {
+	//发送请求
+	request()
+}	
 
-
-if(navigator.userAgent.match(/(iPhone)/)){
+//ios click
+if( navigator.userAgent.match(/(iPhone)/) ){
 	shakeGame.addEventListener("touchstart", e => {
 		e.preventDefault();
 		tempTime1 = 1;
 		request()
 	})
-}else{
-	var shakeGame = classDom('shake-game')[0];
-	shakeGame.onclick = function () {
-		//发送请求
-		request()
-	}	
 }
