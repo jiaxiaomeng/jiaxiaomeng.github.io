@@ -44,9 +44,7 @@ var requset = function (){
 
 //deviceMotiion
 var yyy;
-console.log(!yyy)
 if(window.DeviceMotionEvent && !yyy ){
-	console.log(yyy)
 	var speed = 15;  
 	var x = y = z = lastX = lastY = lastZ = 0;  
 	window.addEventListener('devicemotion', function(){  
@@ -69,12 +67,14 @@ if(window.DeviceMotionEvent && !yyy ){
 
 //click
 var shakeGame = classDom('shake-game')[0];
-shakeGame.onclick = function () {
-	//发送请求
-	requset()
+if(navigator.userAgent.match(/(iPhone)/)[0] == 'iPhone'){
+	shakeGame.addEventListener("touchstart", e => {
+		e.preventDefault()
+		requset()
+	})
+}else{
+	shakeGame.onclick = function () {
+		//发送请求
+		requset()
+	}	
 }
-
-shakeGame.addEventListener("touchstart", e => {
-	e.preventDefault()
-	requset()
-})
