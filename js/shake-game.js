@@ -6,7 +6,12 @@ var tempTime1;
 var supportsVibrate = "vibrate" in navigator;
 //requset
 var requset = function (){
-	navigator.vibrate([2000, 800]);
+	if (navigator.vibrate) {
+		navigator.vibrate([2000, 800]);
+	} else if (navigator.webkitVibrate) {
+		navigator.webkitVibrate([2000, 800]);
+	}
+	
 	var audio1 = classDom('audio1')[0];
 	audio1.play();
 	if (tempTime1 == null){
@@ -44,7 +49,7 @@ var requset = function (){
 
 //deviceMotiion
 var yyy;
-if(window.DeviceMotionEvent && !yyy ){
+if( window.DeviceMotionEvent ){
 	var speed = 15;  
 	var x = y = z = lastX = lastY = lastZ = 0;  
 	window.addEventListener('devicemotion', function(){  
@@ -52,7 +57,7 @@ if(window.DeviceMotionEvent && !yyy ){
 		x = acceleration.x;  
 		y = acceleration.y;  
 		z = acceleration.z;
-		if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed || Math.abs(z-lastZ) > speed) {  
+		if( ( Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed || Math.abs(z-lastZ) > speed ) && !yyy ) {  
 			yyy = 1;
 			navigator.vibrate([2000, 800]);
 			requset()	
