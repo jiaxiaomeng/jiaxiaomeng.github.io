@@ -2,6 +2,9 @@ var classDom = function(cla){
 	return document.getElementsByClassName(cla);
 }
 
+var audio = classDom('audio')[0];
+audio ? audio.play() : false;
+
 var tempTime1;
 //submit
 var btn = function(){

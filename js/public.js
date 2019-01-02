@@ -3,8 +3,6 @@ var classDom = function(cla){
 }
 
 window.onload = function(){	
-	var audio = classDom('audio')[0];
-	audio ? audio.play() : false;
 	var bgWidth =  window.innerWidth;
 	var bgHeight = window.innerHeight;
 	bgHeight < 1745 ? bgHeight = 1745 : false;

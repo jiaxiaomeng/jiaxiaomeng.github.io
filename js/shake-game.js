@@ -55,6 +55,7 @@ if( navigator.userAgent.match(/(iPhone)/)[0] == "iPhone" ) {
 	shakeGame.addEventListener('touchstart', requset, false);
 }
 
+
 //deviceMotiion
 if (window.DeviceMotionEvent) {
 	var speed = 15;
