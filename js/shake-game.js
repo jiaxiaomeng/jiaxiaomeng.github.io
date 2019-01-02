@@ -80,8 +80,6 @@ if(navigator.userAgent.match(/(iPhone)/)[0] == 'iPhone'){
 	})
 }else{
 	shakeGame.onclick = function () {
-		var audio1 = classDom('audio1')[0];
-		audio1.play();
 		//发送请求
 		request()
 	}	
